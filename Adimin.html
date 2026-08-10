@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head><title>Admin Login</title>
+<style>body{text-align:center;padding:50px;background:#f0f8ff;font-family:Arial}input,button{padding:12px;margin:10px;border-radius:8px;border:1px solid #ccc}button{background:#1e3a8a;color:white;border:none}</style>
+</head>
+<body>
+<h2>🔒 Admin Dashboard - ASUM</h2>
+<div id="login">
+  <p>Enter Password to Continue</p>
+  <input type="password" id="pass" placeholder="Password">
+  <button onclick="check()">Login</button>
+</div>
+<div id="data" style="display:none;">
+  <h3>Applications will appear here</h3>
+  <p>For now, applications are sent to your WhatsApp. 
+  In future we can connect Google Sheets to save them here.</p>
+</div>
+<script>
+function check(){
+  if(document.getElementById('pass').value == "ASUM2026Admin"){
+    document.getElementById('login').style.display="none";
+    document.getElementById('data').style.display="block";
+  } else { alert("Wrong Password") }
+}
+</script>
+</body>
+</html>
