@@ -3,40 +3,92 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Home - ONLINE MADRASSASH CLASS</title>
+<title>ONLINE MADRASSASH CLASS</title>
 <style>
-body { margin:0; text-align: center; background: #e6f0ff; font-family: Arial; }
-header { background:#1e3a8a; color:white; padding:15px; }
-nav a { color:white; margin:0 12px; text-decoration:none; font-weight:bold; }
+body { margin:0; text-align: center; background: #f0f9ff; font-family: Arial; scroll-behavior: smooth; }
+header { background:#0284c7; color:white; padding:15px; position:sticky; top:0; z-index:10; }
+header a { color:white; margin:0 12px; text-decoration:none; font-weight:bold; }
+section { padding: 40px 20px; }
 img { width: 250px; margin: 20px auto; border-radius: 20px; }
-h1 { color: #1e3a8a; }
-.box { margin:20px auto; background:white; padding:20px; border-radius:15px; max-width:800px; box-shadow:0 2px 8px rgba(0,0,0,0.1); }
-.whatsapp { display:inline-block; background:#25D366; color:white; padding:15px 30px; border-radius:50px; text-decoration:none; font-weight:bold; }
-footer { background:#1e3a8a; color:white; padding:15px; margin-top:30px; }
-.badge { background:gold; color:#1e3a8a; padding:5px 15px; border-radius:20px; font-weight:bold; }
+.box { margin:20px auto; background:white; padding:25px; border-radius:15px; max-width:800px; box-shadow:0 2px 8px rgba(0,0,0,0.1); text-align:left; }
+h1, h2 { color: #0284c7; text-align:center; }
+.time { font-size:24px; font-weight:bold; color:#0284c7; }
+input, textarea { width:95%; padding:10px; margin:8px 0; border-radius:8px; border:1px solid #ccc; }
+button { background:#0284c7; color:white; padding:12px 25px; border:none; border-radius:8px; font-weight:bold; cursor:pointer; }
+footer { background:#0284c7; color:white; padding:15px; }
+.hidden { display:none; }
+#about { background:#f0fdf4; } #apply { background:#f3e8ff; } #admin { background:#fef2f2; }
 </style>
 </head>
 <body>
+
 <header>
   🌙 ONLINE MADRASSASH CLASS 🌙<br>
-  <span class="badge">Ahlusunnah Wal Jama'ah</span><br>
-  <span>Under ASUM Organisation</span><br>
-  <nav style="margin-top:10px;">
-    <a href="index.html">Home</a>
-    <a href="about.html">About/ReadMe</a>
-    <a href="apply.html">Apply</a>
-    <a href="admin.html">Admin</a>
-  </nav>
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#apply">Apply</a>
+  <a href="#admin">Admin</a>
 </header>
 
-<div class="box">
-  <img src="logo.jpg" alt="Logo">
-  <h1>LEARN QUR'AN ONLINE</h1>
-  <p>ISLAMIC KNOWLEDGE BASED ON QURAN & SUNNAH</p>
-  <a href="https://wa.me/265984625" class="whatsapp">📱 Join on WhatsApp</a>
-  <h2 style="color:#1e3a8a;">📚 Class Times</h2>
-  <p><b>Daily: 6:00 AM - 9:00 PM</b></p>
-</div>
+<!-- 1. HOME SECTION -->
+<section id="home">
+  <div class="box">
+    <img src="logo.jpg" alt="Logo">
+    <h1>ONLINE MADRASSASH CLASS</h1>
+    <p><b>Ahlusunnah Wal Jama'ah - ASUM</b></p>
+    <h2 class="time">⏰ Class Time: 6:00 AM - 9:00 PM Daily</h2>
+    <p>Welcome. Use the menu above to see About, Apply, and Admin.</p>
+  </div>
+</section>
+
+<!-- 2. ABOUT SECTION -->
+<section id="about">
+  <div class="box">
+    <h2>📖 ABOUT THE CLASS</h2>
+    <p>We teach the correct Aqeedah of <b>Ahlusunnah Wal Jama'ah</b>.</p>
+    <p><b>What you will learn:</b></p>
+    <ul>
+      <li>Quran with Tajweed</li>
+      <li>Aqeedah - Tawheed</li>
+      <li>Fiqh - Taharah, Salah</li>
+      <li>Seerah of the Prophet ﷺ</li>
+    </ul>
+    <p><b>Organized by: ASUM Organisation</b></p>
+  </div>
+</section>
+
+<!-- 3. APPLY SECTION -->
+<section id="apply">
+  <div class="box">
+    <h2>📝 APPLICATION FORM</h2>
+    <form onsubmit="sendToWhatsApp(event)">
+      <b>Full Name:</b><br><input type="text" id="name" required><br>
+      <b>Age:</b><br><input type="number" id="age" required><br>
+      <b>WhatsApp Number:</b><br><input type="text" id="phone" required><br>
+      <b>Country:</b><br><input type="text" id="country" required><br><br>
+      <b>Islamic Questions</b><br>
+      <textarea id="q1" placeholder="1. What are the 5 Pillars of Islam?" required></textarea><br>
+      <textarea id="q2" placeholder="2. Who are the 4 Rightly Guided Caliphs?" required></textarea><br>
+      <textarea id="q3" placeholder="3. What is Tawheed?" required></textarea><br>
+      <textarea id="q4" placeholder="4. Why do you want to join?" required></textarea><br>
+      <button type="submit">Send Application via WhatsApp</button>
+    </form>
+  </div>
+</section>
+
+<!-- 4. ADMIN SECTION -->
+<section id="admin">
+  <div class="box">
+    <h2>🔒 ADMIN LOGIN</h2>
+    <input type="password" id="adminPass" placeholder="Enter Admin Password">
+    <button onclick="checkPass()">Login</button>
+    <div id="adminArea" class="hidden">
+      <h3>Welcome Admin</h3>
+      <p>All applications will come to your WhatsApp: <b>265984625</b></p>
+    </div>
+  </div>
+</section>
+
 <footer>© 2026 ONLINE MADRASSASH CLASS | ASUM Organisation</footer>
-</body>
-</html>
+
+<script
