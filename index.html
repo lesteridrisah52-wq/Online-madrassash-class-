@@ -3,88 +3,91 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ONLINE MADRASSASH CLASS</title>
+  <title>ONLINE MADRASSASH CLASS - ASUM</title>
   <style>
-    body { 
-      text-align: center; 
-      background: #e8f5e9; 
-      font-family: Arial; 
-      padding: 20px;
-    }
-    img { 
-      width: 280px; 
-      margin: 20px auto; 
-      border-radius: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-    h1 { color: #2e7d32; font-size: 28px; }
-    p { color: #333; font-size: 18px; }
-    .box {
-      margin-top:30px; 
-      background:white; 
-      padding:20px; 
-      border-radius:15px; 
-      box-shadow:0 2px 8px rgba(0,0,0,0.1); 
-      max-width:400px; 
-      margin-left:auto; 
-      margin-right:auto;
-    }
-    .whatsapp {
-      display:inline-block; 
-      background:#25D366; 
-      color:white; 
-      padding:15px 30px; 
-      border-radius:50px; 
-      text-decoration:none; 
-      font-size:18px; 
-      font-weight:bold; 
-      margin-top:20px;
-    }
-    .social {
-      margin-top:25px;
-    }
-    .social a {
-      display:inline-block;
-      margin:0 10px;
-      font-size:24px;
-      text-decoration:none;
-    }
+    body { margin:0; text-align: center; background: #f0f8ff; font-family: Arial; }
+    header { background:#1e3a8a; color:white; padding:15px; font-size:18px; font-weight:bold; }
+    nav a { color:white; margin:0 15px; text-decoration:none; }
+    .container { padding: 20px; max-width:800px; margin:auto; }
+    img { width: 250px; margin: 20px auto; border-radius: 20px; }
+    h1 { color: #1e3a8a; }
+    .box { margin:20px auto; background:white; padding:20px; border-radius:15px; box-shadow:0 2px 8px rgba(0,0,0,0.1); text-align:left; }
+    .whatsapp { display:inline-block; background:#25D366; color:white; padding:15px 30px; border-radius:50px; text-decoration:none; font-weight:bold; }
+    footer { background:#1e3a8a; color:white; padding:15px; margin-top:30px; }
+    input, select, textarea { padding:10px; margin:8px 0; border-radius:8px; border:1px solid #ccc; width:95%; }
+    button { background:#1e3a8a; color:white; padding:12px 25px; border:none; border-radius:8px; font-weight:bold; cursor:pointer; }
+    .badge { background:gold; color:#1e3a8a; padding:5px 15px; border-radius:20px; font-weight:bold; }
   </style>
 </head>
 <body>
 
-  <img src="logo.jpg" alt="Online Madrassah Logo">
-  
-  <h1>ONLINE MADRASSASH CLASS</h1>
-  <p>LEARN QUR'AN • ISLAMIC KNOWLEDGE • ANYTIME ANYWHERE</p>
+<header>
+  🌙 ONLINE MADRASSASH CLASS 🌙<br>
+  <span class="badge">Ahlusunnah Wal Jama'ah</span><br>
+  <span style="font-size:14px;">Under ASUM Organisation</span><br>
+  <nav style="margin-top:10px;">
+    <a href="index.html">Home</a>
+    <a href="#readme">About/ReadMe</a>
+    <a href="#apply">Apply</a>
+    <a href="admin.html">Admin</a>
+  </nav>
+</header>
 
-  <a href="https://wa.me/265984625" class="whatsapp">
-  📱 Join on WhatsApp
-  </a>
+<div class="container">
+  <img src="logo.jpg" alt="Logo">
+  <h1>LEARN QUR'AN ONLINE</h1>
+  <p>ISLAMIC KNOWLEDGE BASED ON QURAN & SUNNAH</p>
+  <a href="https://wa.me/265984625" class="whatsapp">📱 Join on WhatsApp</a>
 
   <div class="box">
-    <h2 style="color:#2e7d32; margin-bottom:15px;">📚 What We Teach</h2>
-    <p style="font-size:16px; line-height:1.8;">
-      ✅ Quran with Tajweed<br>
-      ✅ Fiqh - Islamic Jurisprudence<br>
-      ✅ Akhlaq - Good Manners<br>
-      ✅ Islamic History<br>
-      ✅ Dua & Dhikr
-    </p>
-    
-    <h2 style="color:#2e7d32; margin-top:20px; margin-bottom:15px;">⏰ Class Times</h2>
-    <p style="font-size:16px;">
-      Mon - Fri: 5:00 PM - 7:00 PM<br>
-      Sat: 10:00 AM - 12:00 PM
-    </p>
+    <h2 style="color:#1e3a8a;">📚 Class Times</h2>
+    <p><b>Daily: 6:00 AM - 9:00 PM</b></p>
   </div>
 
-  <div class="social">
-    <h3 style="color:#2e7d32;">Follow Us</h3>
-    <a href="https://t.me/yourusername">📢</a>
-    <a href="https://youtube.com/@yourchannel">▶️</a>
-    <a href="https://tiktok.com/@yourusername">🎵</a>
+  <div id="readme" class="box">
+    <h2 style="color:#1e3a8a;">📖 About Us - README</h2>
+    <p><b>Vision:</b> To spread authentic Islamic knowledge based on Quran and Sunnah upon the understanding of the Sahabah.</p>
+    <p><b>Aqeedah:</b> We are upon the methodology of <b>Ahlusunnah Wal Jama'ah</b></p>
+    <p><b>Organisation:</b> This class is under <b>ASUM Organisation</b></p>
+    <p><b>Rules:</b> Respect teachers, attend on time, keep camera on, be serious with learning.</p>
   </div>
 
+  <div id="apply" class="box">
+    <h2 style="color:#1e3a8a;">📝 Application Form</h2>
+    <form onsubmit="sendToWhatsApp(event)">
+      <b>Personal Info</b><br>
+      <input type="text" id="name" placeholder="Full Name" required><br>
+      <input type="number" id="age" placeholder="Age" required><br>
+      <input type="text" id="phone" placeholder="WhatsApp Number" required><br>
+      <input type="text" id="country" placeholder="Country" required><br>
+      
+      <b>Islamic Questions</b><br>
+      <textarea id="q1" placeholder="1. What are the 5 Pillars of Islam?" rows="2" required></textarea><br>
+      <textarea id="q2" placeholder="2. Who are the 4 Rightly Guided Caliphs?" rows="2" required></textarea><br>
+      <textarea id="q3" placeholder="3. What is Tawheed?" rows="2" required></textarea><br>
+      <textarea id="q4" placeholder="4. Can you read Quran? If yes, which Surah is your favorite?" rows="2" required></textarea><br>
+      <textarea id="q5" placeholder="5. Why do you want to join Ahlusunnah Wal Jama'ah class?" rows="3" required></textarea><br>
+      <select id="level" required>
+        <option value="">Select Your Level</option>
+        <option>Beginner - Can't read Arabic</option>
+        <option>Intermediate - Can read with Tajweed</option>
+        <option>Advanced - Can read + Memorize</option>
+      </select><br>
+      <button type="submit">Submit Application</button>
+    </form>
+  </div>
+</div>
+
+<footer>
+  © 2026 ONLINE MADRASSASH CLASS | ASUM Organisation | Lilongwe, Malawi
+</footer>
+
+<script>
+function sendToWhatsApp(e){
+  e.preventDefault();
+  let msg = `NEW APPLICATION%0AName: ${document.getElementById('name').value}%0AAge: ${document.getElementById('age').value}%0APhone: ${document.getElementById('phone').value}%0ACountry: ${document.getElementById('country').value}%0ALevel: ${document.getElementById('level').value}%0A%0AQ1: ${document.getElementById('q1').value}%0AQ2: ${document.getElementById('q2').value}%0AQ3: ${document.getElementById('q3').value}%0AQ4: ${document.getElementById('q4').value}%0AQ5: ${document.getElementById('q5').value}`;
+  window.open(`https://wa.me/265984625?text=${msg}`,'_blank');
+}
+</script>
 </body>
 </html>
