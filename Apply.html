@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head><title>Apply - ASUM</title>
+<style>
+body { margin:0; text-align: center; background: #f3e8ff; font-family: Arial; }
+header { background:#6b21a8; color:white; padding:15px; }
+nav a { color:white; margin:0 12px; text-decoration:none; font-weight:bold; }
+.box { margin:20px auto; background:white; padding:20px; border-radius:15px; max-width:800px; text-align:left; }
+input, select, textarea { padding:10px; margin:8px 0; border-radius:8px; border:1px solid #ccc; width:95%; }
+button { background:#6b21a8; color:white; padding:12px 25px; border:none; border-radius:8px; font-weight:bold; cursor:pointer; }
+</style>
+</head>
+<body>
+<header>
+  🌙 ONLINE MADRASSASH CLASS 🌙<br>
+  <nav style="margin-top:10px;">
+    <a href="index.html">Home</a>
+    <a href="about.html">About/ReadMe</a>
+    <a href="apply.html">Apply</a>
+    <a href="admin.html">Admin</a>
+  </nav>
+</header>
+<div class="box">
+  <h2 style="color:#6b21a8;">📝 Application Form - Ahlusunnah Wal Jama'ah</h2>
+  <form onsubmit="sendToWhatsApp(event)">
+    <b>Personal Info</b><br>
+    <input type="text" id="name" placeholder="Full Name" required><br>
+    <input type="number" id="age" placeholder="Age" required><br>
+    <input type="text" id="phone" placeholder="WhatsApp Number" required><br>
+    <input type="text" id="country" placeholder="Country" required><br>
+    <b>Islamic Questions</b><br>
+    <textarea id="q1" placeholder="1. What are the 5 Pillars of Islam?" required></textarea><br>
+    <textarea id="q2" placeholder="2. Who are the 4 Rightly Guided Caliphs?" required></textarea><br>
+    <textarea id="q3" placeholder="3. What is Tawheed?" required></textarea><br>
+    <textarea id="q4" placeholder="4. What is the difference between Sunnah and Bid'ah?" required></textarea><br>
+    <textarea id="q5" placeholder="5. Why do you want to join Ahlusunnah Wal Jama'ah class?" required></textarea><br>
+    <select id="level" required><option value="">Select Your Level</option><option>Beginner</option><option>Intermediate</option><option>Advanced</option></select><br>
+    <button type="submit">Submit Application</button>
+  </form>
+</div>
+<script>
+function sendToWhatsApp(e){
+  e.preventDefault();
+  let msg = `NEW APPLICATION%0AName: ${name.value}%0AAge: ${age.value}%0APhone: ${phone.value}%0ACountry: ${country.value}%0ALevel: ${level.value}%0A%0AQ1: ${q1.value}%0AQ2: ${q2.value}%0AQ3: ${q3.value}%0AQ4: ${q4.value}%0AQ5: ${q5.value}`;
+  window.open(`https://wa.me/265984625?text=${msg}`,'_blank');
+}
+</script>
+</body>
+</html>
