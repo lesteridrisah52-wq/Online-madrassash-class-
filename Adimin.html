@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html>
-<head><title>Admin Login</title>
-<style>body{text-align:center;padding:50px;background:#f0f8ff;font-family:Arial}input,button{padding:12px;margin:10px;border-radius:8px;border:1px solid #ccc}button{background:#1e3a8a;color:white;border:none}</style>
+<head><title>Admin - ASUM</title>
+<style>
+body { margin:0; text-align:center; padding:50px; background:#fee2e2; font-family:Arial }
+header { background:#991b1b; color:white; padding:15px; }
+.box{background:white;padding:30px;border-radius:15px;max-width:400px;margin:20px auto}
+input,button{padding:12px;margin:10px;border-radius:8px;border:1px solid #ccc;width:80%}
+button{background:#991b1b;color:white;border:none;font-weight:bold;cursor:pointer}
+</style>
 </head>
 <body>
-<h2>🔒 Admin Dashboard - ASUM</h2>
+<header>🔒 ADMIN DASHBOARD</header>
+<div class="box">
 <div id="login">
-  <p>Enter Password to Continue</p>
-  <input type="password" id="pass" placeholder="Password">
+  <h3>Login Required</h3>
+  <input type="password" id="pass" placeholder="Enter Password">
   <button onclick="check()">Login</button>
 </div>
 <div id="data" style="display:none;">
-  <h3>Applications will appear here</h3>
-  <p>For now, applications are sent to your WhatsApp. 
-  In future we can connect Google Sheets to save them here.</p>
+  <h3>Welcome Admin!</h3>
+  <p>All applications are sent to your WhatsApp: <b>265984625</b></p>
+</div>
 </div>
 <script>
 function check(){
   if(document.getElementById('pass').value == "ASUM2026Admin"){
     document.getElementById('login').style.display="none";
     document.getElementById('data').style.display="block";
-  } else { alert("Wrong Password") }
+  } else { alert("Wrong Password! Use: ASUM2026Admin") }
 }
 </script>
 </body>
