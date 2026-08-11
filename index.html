@@ -3,124 +3,75 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ONLINE MADRASSASH CLASS</title>
+<title>Online Madrassah Application</title>
 <style>
-body { margin:0; text-align: center; background: #f0f9ff; font-family: Arial; scroll-behavior: smooth; }
-header { background:#0284c7; color:white; padding:15px; position:sticky; top:0; z-index:10; }
-header a { color:white; margin:0 12px; text-decoration:none; font-weight:bold; }
-section { padding: 40px 20px; }
-img { width: 250px; margin: 20px auto; border-radius: 20px; }
-.box { margin:20px auto; background:white; padding:25px; border-radius:15px; max-width:800px; box-shadow:0 2px 8px rgba(0,0,0,0.1); text-align:left; }
-h1, h2 { color: #0284c7; text-align:center; }
-.time { font-size:24px; font-weight:bold; color:#0284c7; }
-input, textarea { width:95%; padding:10px; margin:8px 0; border-radius:8px; border:1px solid #ccc; }
-button { background:#0284c7; color:white; padding:12px 25px; border:none; border-radius:8px; font-weight:bold; cursor:pointer; }
-footer { background:#0284c7; color:white; padding:15px; }
-.hidden { display:none; }
-#about { background:#f0fdf4; } #apply { background:#f3e8ff; } #admin { background:#fef2f2; }
+  body { font-family: Arial; background: #f4f4f9; padding: 20px; }
+  .container { max-width: 600px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px #ccc; }
+  h1 { text-align: center; color: #2c3e50; }
+  input, textarea, select { width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #ddd; border-radius: 5px; }
+  button { width: 100%; padding: 12px; background: #25D366; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; }
+  button:hover { background: #1ebe5a; }
+  #adminArea { display: none; margin-top: 20px; padding: 15px; background: #ecf0f1; border-radius: 5px; }
 </style>
 </head>
 <body>
 
-<header>
-  🌙 ONLINE MADRASSASH CLASS 🌙<br>
-  <a href="#home">Home</a>
-  <a href="#about">About</a>
-  <a href="#apply">Apply</a>
-  <a href="#admin">Admin</a>
-</header>
+<div class="container">
+  <h1>📖 Online Madrassah Application</h1>
+  
+  <form onsubmit="sendToWhatsApp(event)">
+    <label>Full Name</label>
+    <input type="text" id="name" required>
+    
+    <label>Age</label>
+    <input type="number" id="age" required>
+    
+    <label>Phone Number</label>
+    <input type="text" id="phone" required>
+    
+    <label>Country</label>
+    <input type="text" id="country" required>
+    
+    <label>Q1: Why do you want to join?</label>
+    <textarea id="q1" required></textarea>
+    
+    <label>Q2: Do you have Quran experience?</label>
+    <textarea id="q2" required></textarea>
+    
+    <label>Q3: What time can you study?</label>
+    <textarea id="q3" required></textarea>
+    
+    <label>Q4: Anything else?</label>
+    <textarea id="q4"></textarea>
+    
+    <button type="submit">Send Application via WhatsApp</button>
+  </form>
 
-<!-- 1. HOME SECTION -->
-<section id="home">
-  <div class="box">
-    <img src="logo.jpg" alt="Logo">
-    <h1>ONLINE MADRASSASH CLASS</h1>
-    <p><b>Ahlusunnah Wal Jama'ah - ASUM</b></p>
-    <h2 class="time">⏰ Class Time: 6:00 AM - 9:00 PM Daily</h2>
-    <p>Welcome. Use the menu above to see About, Apply, and Admin.</p>
+  <hr>
+  <h3>Admin Login</h3>
+  <input type="password" id="adminPass" placeholder="Enter Password">
+  <button onclick="checkPass()" style="background:#3498db;">Login</button>
+  
+  <div id="adminArea">
+    <h4>✅ Welcome Admin</h4>
+    <p>Applications will come to your WhatsApp: 0984984625</p>
   </div>
-</section>
+</div>
 
-<!-- 2. ABOUT SECTION -->
-<section id="about">
-  <div class="box">
-    <h2>📖 ABOUT THE CLASS</h2>
-    <p>We teach the correct Aqeedah of <b>Ahlusunnah Wal Jama'ah</b>.</p>
-    <p><b>What you will learn:</b></p>
-    <ul>
-      <li>Quran with Tajweed</li>
-      <li>Aqeedah - Tawheed</li>
-      <li>Fiqh - Taharah, Salah</li>
-      <li>Seerah of the Prophet ﷺ</li>
-    </ul>
-    <p><b>Organized by: ASUM Organisation</b></p>
-  </div>
-</section>
-
-<!-- 3. APPLY SECTION -->
-<section id="apply">
-  <div class="box">
-    <h2>📝 APPLICATION FORM</h2>
-    <form onsubmit="sendToWhatsApp(event)">
-      <b>Full Name:</b><br><input type="text" id="name" required><br>
-      <b>Age:</b><br><input type="number" id="age" required><br>
-      <b>WhatsApp Number:</b><br><input type="text" id="phone" required><br>
-      <b>Country:</b><br><input type="text" id="country" required><br><br>
-      <b>Islamic Questions</b><br>
-      <textarea id="q1" placeholder="1. What are the 5 Pillars of Islam?" required></textarea><br>
-      <textarea id="q2" placeholder="2. Who are the 4 Rightly Guided Caliphs?" required></textarea><br>
-      <textarea id="q3" placeholder="3. What is Tawheed?" required></textarea><br>
-      <textarea id="q4" placeholder="4. Why do you want to join?" required></textarea><br>
-      <button type="submit">Send Application via WhatsApp</button>
-    </form>
-  </div>
-</section>
-
-<!-- 4. ADMIN SECTION -->
-<section id="admin">
-  <div class="box">
-    <h2>🔒 ADMIN LOGIN</h2>
-    <input type="password" id="adminPass" placeholder="Enter Admin Password">
-    <button onclick="checkPass()">Login</button>
-    <div id="adminArea" class="hidden">
-      <h3>Welcome Admin</h3>
-      <p>All applications will come to your WhatsApp: <b>265984625</b></p>
-    </div>
-  </div>
-</section>
-
-<footer>© 2026 ONLINE MADRASSASH CLASS | ASUM Organisation</footer>
 <script>
 function sendToWhatsApp(e){
   e.preventDefault();
-  let msg = `NEW APPLICATION%0AName: ${document.getElementById('name').value}%0AAge: ${document.getElementById('age').value}%0APhone: ${document.getElementById('phone').value}%0ACountry: ${document.getElementById('country').value}%0A%0AQ1: ${document.getElementById('q1').value}%0AQ2: ${document.getElementById('q2').value}%0AQ3: ${document.getElementById('q3').value}%0AQ4: ${document.getElementById('q4').value}`;
-  window.open(`https://wa.me/265984625?text=${msg}`,'_blank');
+  let msg = `NEW APPLICATION%0A%0AName: ${document.getElementById('name').value}%0AAge: ${document.getElementById('age').value}%0APhone: ${document.getElementById('phone').value}%0ACountry: ${document.getElementById('country').value}%0A%0AQ1: ${document.getElementById('q1').value}%0AQ2: ${document.getElementById('q2').value}%0AQ3: ${document.getElementById('q3').value}%0AQ4: ${document.getElementById('q4').value}`;
+  window.open(`https://wa.me/265984984625?text=${msg}`,'_blank');
 }
 
 function checkPass(){
   let pass = document.getElementById('adminPass').value;
   let area = document.getElementById('adminArea');
-      <script>
-    function sendToWhatsApp(e){
-      e.preventDefault();
-      let msg = `NEW APPLICATION%0AName: ${document.getElementById('name').value}%0AAge: ${document.getElementById('age').value}%0APhone: ${document.getElementById('phone').value}%0ACountry: ${document.getElementById('country').value}%0A%0AQ1: ${document.getElementById('q1').value}%0AQ2: ${document.getElementById('q2').value}%0AQ3: ${document.getElementById('q3').value}%0AQ4: ${document.getElementById('q4').value}`;
-      window.open(`https://wa.me/265984625?text=${msg}`,'_blank');
-    }
-
-    function checkPass(){
-      let pass = document.getElementById('adminPass').value;
-      let area = document.getElementById('adminArea');
-      
-      if(pass == "ASUM2026"){
-        area.style.display = 'block'; 
-        alert("✅ Login Successful - Welcome Admin");
-      } else {
-        alert("❌ Wrong Password. Try: ASUM2026");
-      }
-    }
-    </script>
-    </body>
-    </html>
+  
+  if(pass == "ASUM2026"){
+    area.style.display = 'block'; 
+    alert("✅ Login Successful - Welcome Admin");
   } else {
     alert("❌ Wrong Password. Try: ASUM2026");
   }
