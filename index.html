@@ -100,10 +100,27 @@ function sendToWhatsApp(e){
 function checkPass(){
   let pass = document.getElementById('adminPass').value;
   let area = document.getElementById('adminArea');
-  
-  if(pass == "ASUM2026"){
-    area.style.display = 'block'; 
-    alert("✅ Login Successful - Welcome Admin");
+      <script>
+    function sendToWhatsApp(e){
+      e.preventDefault();
+      let msg = `NEW APPLICATION%0AName: ${document.getElementById('name').value}%0AAge: ${document.getElementById('age').value}%0APhone: ${document.getElementById('phone').value}%0ACountry: ${document.getElementById('country').value}%0A%0AQ1: ${document.getElementById('q1').value}%0AQ2: ${document.getElementById('q2').value}%0AQ3: ${document.getElementById('q3').value}%0AQ4: ${document.getElementById('q4').value}`;
+      window.open(`https://wa.me/265984625?text=${msg}`,'_blank');
+    }
+
+    function checkPass(){
+      let pass = document.getElementById('adminPass').value;
+      let area = document.getElementById('adminArea');
+      
+      if(pass == "ASUM2026"){
+        area.style.display = 'block'; 
+        alert("✅ Login Successful - Welcome Admin");
+      } else {
+        alert("❌ Wrong Password. Try: ASUM2026");
+      }
+    }
+    </script>
+    </body>
+    </html>
   } else {
     alert("❌ Wrong Password. Try: ASUM2026");
   }
